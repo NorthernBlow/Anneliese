@@ -65,5 +65,61 @@ res
 
 
 ```python
-
+%whos
 ```
+
+    Variable   Type    Data/Info
+    ----------------------------
+    d          dict    n=2
+    res        int     3
+
+
+#### Удаляет переменные, которые были определены пользователем 
+
+
+```python
+%reset_selective -f res
+```
+
+
+```python
+%whos
+```
+
+    Variable   Type    Data/Info
+    ----------------------------
+    d          dict    n=2
+
+
+#### Время выполнения программы. Альтернатива - %%time или %%timeit
+
+
+```python
+import time
+
+start = time.time()
+
+for i in range (100000):
+    pass
+
+time.time() - start
+```
+
+
+
+
+    0.005372285842895508
+
+
+
+
+```python
+%%time
+
+for i in range (100000):
+    pass
+```
+
+    CPU times: user 5.33 ms, sys: 0 ns, total: 5.33 ms
+    Wall time: 5.34 ms
+
